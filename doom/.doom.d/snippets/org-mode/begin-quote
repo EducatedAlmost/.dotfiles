@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: begin-quote
+# key: bq
+# --
+#+BEGIN_QUOTE
+$0
+#+END_QUOTE

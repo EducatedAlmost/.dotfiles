@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: roam-alias
+# key: ra
+# --
+:ROAM_ALIASES: "$0"

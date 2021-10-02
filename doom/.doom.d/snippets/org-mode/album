@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: album
+# key: album
+# --
+[[file:20210214100723-album.org][Album]]
+Artist:
+Year:
+Genre:
