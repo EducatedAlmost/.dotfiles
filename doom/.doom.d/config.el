@@ -84,13 +84,12 @@
 (setq org-startup-indented t)
 
 ;; Org > Agenda
-(setq org-agenda-files `(,org-base-dir))
 (setq org-agenda-start-day "-1d")
 (setq org-agenda-span 7)
 (setq org-agenda-start-on-weekday nil)
 
 ;; Org > Archiving
-(setq org-archive-location (concat org-archive-dir "/%s_archive::"))
+(setq org-archive-location (concat "~/org/archive" "/%s_archive::"))
 
 ;; Org > Capture
 (setq org-capture-templates
