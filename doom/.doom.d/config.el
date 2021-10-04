@@ -63,7 +63,8 @@
 (global-centered-cursor-mode t)
 
 ;; Dired
-  (setq dired-listing-switches "-aBGhl --group-directories-first")
+(setq dired-listing-switches "-aBGhl --group-directories-first")
+(setq ranger-show-hidden t)
 
   ;; Epub
   (defun my-nov-font-setup ()
