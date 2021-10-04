@@ -12,7 +12,7 @@ PATH_ELEMENTS=(
     "/usr/local/games"
 
     "${HOME}/bin"
-    "${HOME}/scripts"
+    "${HOME}/.scripts"
 
     "${GOPATH}/bin"
     "${HOME}/.cargo/bin"
