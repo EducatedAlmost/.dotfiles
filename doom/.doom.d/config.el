@@ -119,6 +119,9 @@
         ("DONE" . "ForestGreen")
         ("CANCELLED" . "SlateBlue")))
 
+;; Uniquify
+(toggle-uniquify-buffer-names t)
+
 ;; Vimrc
 (require 'vimrc-mode)
 (add-to-list 'auto-mode-alist '("\\.vim\\(rc\\)?\\'" . vimrc-mode))
