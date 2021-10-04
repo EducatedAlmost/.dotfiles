@@ -3,7 +3,7 @@
 
 set -e
 
-PIC=~/tmp/screen.png
+PIC=~/tmp/i3-lock-screen.png
 
 scrot $PIC
 convert $PIC -scale 10% -scale 1000% $PIC
