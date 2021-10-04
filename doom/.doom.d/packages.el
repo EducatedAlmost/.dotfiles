@@ -51,3 +51,4 @@
 
 (package! org-fragtog)
 (package! centered-cursor-mode)
+(package! vimrc-mode)
