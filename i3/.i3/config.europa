@@ -178,7 +178,7 @@ bar {
 # Startup
 
 # exec --no-startup-id nitrogen --set-zoom-fill --random ~/media/pictures/wallpapers/
-exec --no-startup-id nitrogen --set-auto ~/media/pictures/wallpapers/faye.jpg
+exec --no-startup-id nitrogen --set-auto ~/.wallpapers/faye.jpg
 
 exec --no-startup-id unclutter -root
 exec --no-startup-id nm-applet
