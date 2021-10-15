@@ -16,7 +16,7 @@ export GOPATH=$HOME/src/go
 # i3
 
 HN=$(hostname)
-DOT=$HOME/.dotfiles
+DOT=$HOME/.dotfiles.ae
 CUSTOM=$DOT/i3/.i3/config.$HN
 DEF=$DOT/i3/.i3/config.default
 if [[ -f "$CUSTOM" ]]; then
