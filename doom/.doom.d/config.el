@@ -74,6 +74,9 @@
      :height 1.5))
   (add-hook 'nov-mode-hook 'my-nov-font-setup)
 
+;; Input mode
+(add-hook 'text-mode-hook (lambda () (set-input-method 'TeX)))
+
 ;; Mixed-pitch
 (add-hook 'org-mode-hook 'mixed-pitch-mode)
 
