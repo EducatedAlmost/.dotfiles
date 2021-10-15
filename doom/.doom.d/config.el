@@ -125,3 +125,11 @@
 ;; Vimrc
 (require 'vimrc-mode)
 (add-to-list 'auto-mode-alist '("\\.vim\\(rc\\)?\\'" . vimrc-mode))
+
+;; Visual-line-mode
+;; Make movement keys work like they should
+(map! :map evil-normal-state-map
+      "j" #'evil-next-visual-line
+      "k" #'evil-previous-visual-line)
+;; Make horizontal movement cross lines
+(setq-default evil-cross-lines t)
