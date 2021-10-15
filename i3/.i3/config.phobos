@@ -187,4 +187,6 @@ exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id i3-msg 'workspace 8; exec i3-sensible-terminal; exec emacs; exec firefox'
 
+exec --no-startup-id picom -b
+
 workspace_layout stacking
