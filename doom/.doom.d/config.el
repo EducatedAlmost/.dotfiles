@@ -134,8 +134,8 @@
 
 ;; Visual-line-mode
 ;; Make movement keys work like they should
-(map! :map evil-normal-state-map
-      "j" #'evil-next-visual-line
-      "k" #'evil-previous-visual-line)
+;; (map! :map visual-line-mode-map
+;;       "j" #'evil-next-visual-line
+;;       "k" #'evil-previous-visual-line)
 ;; Make horizontal movement cross lines
-(setq-default evil-cross-lines t)
+;; (setq-default evil-cross-lines t)
