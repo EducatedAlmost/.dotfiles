@@ -49,6 +49,11 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 
-(package! org-fragtog)
+;; Bang.el
+(package! bang :recipe (:host github :repo "EducatedAlmost/bang.el"))
+
 (package! centered-cursor-mode)
+
+;; Org-fragtog
+(package! org-fragtog)
 (package! vimrc-mode)
