@@ -51,6 +51,9 @@
 ;; (setq backup-directory-alist '(("." . "~/.emacs-saves")))
 ;; (setq backup-by-copying nil)
 
+;; Bang.el
+(require 'bang)
+
 ;; Browser
 (setq browse-url-browser-function 'browse-url-firefox
       browse-url-generic-program "firefox")
