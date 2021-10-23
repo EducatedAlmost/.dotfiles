@@ -52,8 +52,11 @@
 ;; Bang.el
 (package! bang :recipe (:host github :repo "EducatedAlmost/bang.el"))
 
+;; Centred cursor mode
 (package! centered-cursor-mode)
 
 ;; Org-fragtog
 (package! org-fragtog)
+
+;; Vimrc
 (package! vimrc-mode)
