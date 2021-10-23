@@ -98,6 +98,11 @@
 ;; Org > Archiving
 (setq org-archive-location (concat "~/org/archive" "/%s_archive::"))
 
+;; Org > Babel
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((restclient . t)))
+
 ;; Org > Capture
 (setq org-capture-templates
       `(("c" "Capture" entry

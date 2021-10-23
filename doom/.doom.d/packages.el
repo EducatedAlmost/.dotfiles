@@ -55,6 +55,11 @@
 ;; Centred cursor mode
 (package! centered-cursor-mode)
 
+
+;; Org-babel
+(package! restclient)
+(package! ob-restclient)
+
 ;; Org-fragtog
 (package! org-fragtog)
 
