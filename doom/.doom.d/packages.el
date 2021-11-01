@@ -66,5 +66,8 @@
 ;; Org-fragtog
 (package! org-fragtog)
 
+;; Read-time
+(package! read-time :recipe (:host github :repo "EducatedAlmost/read-time.el"))
+
 ;; Vimrc
 (package! vimrc-mode)

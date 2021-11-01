@@ -133,6 +133,10 @@
         ("DONE" . "ForestGreen")
         ("CANCELLED" . "SlateBlue")))
 
+;; Read-time
+(require 'read-time)
+(setq read-time-words-per-sec 10)
+
 ;; Uniquify
 (toggle-uniquify-buffer-names t)
 
