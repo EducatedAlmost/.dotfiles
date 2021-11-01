@@ -137,6 +137,9 @@
 (require 'read-time)
 (setq read-time-words-per-sec 10)
 
+;; Spelling
+(setq ispell-dictionary "british-ise-w_accents")
+
 ;; Uniquify
 (toggle-uniquify-buffer-names t)
 
