@@ -69,19 +69,22 @@
 (setq dired-listing-switches "-aBGhl --group-directories-first")
 (setq ranger-show-hidden t)
 
-  ;; Epub
-  (defun my-nov-font-setup ()
-    (face-remap-add-relative
-     'variable-pitch
-     :family "CMU Serif"
-     :height 1.5))
-  (add-hook 'nov-mode-hook 'my-nov-font-setup)
-
 ;; Input mode
 (add-hook 'text-mode-hook (lambda () (set-input-method 'TeX)))
 
 ;; Mixed-pitch
 (add-hook 'org-mode-hook 'mixed-pitch-mode)
+
+;; Nov.el
+(require 'nov)
+(add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
+(defun my-nov-font-setup ()
+  (face-remap-add-relative
+   'variable-pitch
+   :family "CMU Serif"
+   :height 1.2))
+(add-hook 'nov-mode-hook 'my-nov-font-setup)
+;; (add-hook 'nov-mode-hook 'visual-line-mode)
 
 ;; Org
 (setq org-directory "~/org/")

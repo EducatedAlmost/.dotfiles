@@ -56,6 +56,9 @@
 (package! centered-cursor-mode)
 
 
+;; Nov.el
+(package! nov)
+
 ;; Org-babel
 (package! restclient)
 (package! ob-restclient)
