@@ -14,6 +14,9 @@
 ;;      Alternatively, press 'gd' (or 'C-c c d') on a module to browse its
 ;;      directory (for easy access to its source code).
 
+;; Configuration that needs to be loaded very early
+(setq evil-respect-visual-line-mode t)
+
 (doom! :input
        chinese
        ;;japanese
