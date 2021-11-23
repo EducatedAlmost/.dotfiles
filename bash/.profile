@@ -8,7 +8,7 @@ fi
 
 # Exports
 
-export LC_COLLATE="en_GB.utf8"
+export LC_COLLATE="C"
 export TERMINAL="/usr/bin/alacritty"
 
 export GOPATH=$HOME/src/go
