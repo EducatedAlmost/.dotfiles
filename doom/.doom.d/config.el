@@ -93,33 +93,25 @@
 ;; (add-hook 'nov-mode-hook 'visual-line-mode)
 
 ;; Org
-(setq org-directory "~/org/")
-(setq org-default-notes-file "~/org/refile.org")
-(setq org-roam-directory "~/org/roam")
+(after! org
+  (setq org-directory "~/org/")
+  (setq org-default-notes-file "~/org/refile.org")
+  (setq org-roam-directory "~/org/roam")
 
-(setq org-startup-indented t)
+  (setq org-startup-indented t)
 
-;; Org > Agenda
-(setq org-agenda-start-day "-1d")
-(setq org-agenda-span 7)
-(setq org-agenda-start-on-weekday nil)
+  ;; Org > Agenda
+  (setq org-agenda-files `(,org-directory))
+  (setq org-agenda-files
+        (append (list org-directory)
+                (directory-files org-directory 'full (rx "client-"))))
+  (setq org-agenda-start-day "-1d")
+  (setq org-agenda-span 7)
+  (setq org-agenda-start-on-weekday nil)
 
-;; Org > Archiving
-(setq org-archive-location (concat "~/org/archive" "/%s_archive::"))
 
-
-;; Org > Capture
-(setq org-capture-templates
-      `(("c" "Capture" entry
-         (file ,org-default-notes-file)
-         "* REFILE %?")))
-;; (add-hook 'org-capture-mode-hook 'evil-insert-state)
-
-;; Org > Fragtog
-(add-hook 'org-mode-hook 'org-fragtog-mode)
-
-;; Org > Tags
-(setq org-tags-column 0)
+  ;; Org > Archiving
+  (setq org-archive-location (concat "~/org/archive" "/%s_archive::"))
 
   ;; Archive subtree, preserving structure
   ;; https://github.com/daviderestivo/galactic-emacs/blob/master/lisp/org-archive-subtree.el
@@ -170,6 +162,29 @@
      (dot . t)
      (ditaa . t)
      (plantuml . t)))
+
+  ;; Org > Capture
+  (setq org-capture-templates
+        `(("c" "Capture" entry
+           (file ,org-default-notes-file)
+           "* MOVE %?")))
+  ;; (add-hook 'org-capture-mode-hook 'evil-insert-state)
+
+  ;; Org > Cycle
+  (setq org-tab-first-hook
+        (delete '+org-cycle-only-current-subtree-h org-tab-first-hook))
+
+  ;; Org > Fragtog
+  (add-hook 'org-mode-hook 'org-fragtog-mode)
+
+  ;; Org > Headings
+  (setq org-blank-before-new-entry
+        '((heading . always)
+          (plain-list-item . nil)))
+
+  ;; Org > Tags
+  (setq org-tags-column 0)
+
   ;; Org > Todo
   (setq org-todo-keywords
         '((sequence
@@ -184,6 +199,8 @@
           "|"
           ("DONE" . "ForestGreen")
           ("KILL" . "SlateBlue")))
+  )
+
 ;; PlantUML
 (require 'plantuml-mode)
 (setq org-plantuml-jar-path "/home/dare/bin/plantuml-1.2021.13.jar")
