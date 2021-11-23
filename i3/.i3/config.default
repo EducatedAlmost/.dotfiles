@@ -106,7 +106,7 @@ set $delay 150
 set $rate  50
 bindsym $mod+x exec --no-startup-id xset r rate $delay $rate
 
-bindsym $mod+c exec --no-startup-id killall compton ; compton -b
+bindsym $mod+c exec --no-startup-id killall picom ; picom -b
 
 # Resize mode
 
