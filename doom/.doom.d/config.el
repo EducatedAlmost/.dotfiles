@@ -145,6 +145,9 @@
 (setq org-plantuml-exec-mode 'executable)
 (add-to-list 'org-src-lang-modes '("plantuml" . plantuml))
 
+;; Projectile
+(setq projectile-project-search-path '("~/src/" "~/git/" "~/org/"))
+
 ;; Read-time
 (require 'read-time)
 (setq read-time-words-per-sec 10)
