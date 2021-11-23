@@ -112,6 +112,15 @@
 (setq org-todo-keywords
       '((sequence
          "TODO(t)" "REFILE(r)" "WAIT(w)"
+ (setq org-agenda-custom-commands
+       '(("c" . "My Custom Agenda")
+         ("cu" "Unscheduled TODO"
+          ((todo ""
+                 ((org-agenda-overriding-header "\nUnscheduled TODO")
+                  (org-agenda-skip-function '(org-agenda-skip-entry-if 'timestamp)))))
+          nil
+          nil)))
+
          "|"
          "DONE(d)" "CANCELLED(c)")))
 (setq org-todo-keyword-faces
