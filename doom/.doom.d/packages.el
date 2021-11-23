@@ -66,6 +66,9 @@
 ;; Org-fragtog
 (package! org-fragtog)
 
+;; PlantUML
+(package! plantuml-mode :recipe (:host github :repo "skuro/plantuml-mode"))
+
 ;; Read-time
 (package! read-time :recipe (:host github :repo "EducatedAlmost/read-time.el"))
 
