@@ -80,6 +80,7 @@
 
 ;; Mixed-pitch
 (add-hook 'org-mode-hook 'mixed-pitch-mode)
+(add-hook 'org-mode-hook 'variable-pitch-mode)
 
 ;; Nov.el
 (require 'nov)
@@ -155,6 +156,7 @@
                 (widen)
                 (org-end-of-subtree t t)
                 (org-paste-subtree level tree-text))))))))
+
   ;; Org > Babel
   (org-babel-do-load-languages
    'org-babel-load-languages
