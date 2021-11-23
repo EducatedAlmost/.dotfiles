@@ -138,6 +138,12 @@
         "|"
         ("DONE" . "ForestGreen")
         ("CANCELLED" . "SlateBlue")))
+;; PlantUML
+(require 'plantuml-mode)
+(setq org-plantuml-jar-path "/home/dare/bin/plantuml-1.2021.13.jar")
+(setq org-plantuml-executable-path "plantuml")
+(setq org-plantuml-exec-mode 'executable)
+(add-to-list 'org-src-lang-modes '("plantuml" . plantuml))
 
 ;; Read-time
 (require 'read-time)
