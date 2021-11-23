@@ -107,10 +107,6 @@
 ;; Org > Archiving
 (setq org-archive-location (concat "~/org/archive" "/%s_archive::"))
 
-;; Org > Babel
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((restclient . t)))
 
 ;; Org > Capture
 (setq org-capture-templates
@@ -167,6 +163,13 @@
                 (widen)
                 (org-end-of-subtree t t)
                 (org-paste-subtree level tree-text))))))))
+  ;; Org > Babel
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((restclient . t)
+     (dot . t)
+     (ditaa . t)
+     (plantuml . t)))
   ;; Org > Todo
   (setq org-todo-keywords
         '((sequence
