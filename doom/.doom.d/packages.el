@@ -49,6 +49,28 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 
-(package! org-fragtog)
+;; Bang.el
+(package! bang :recipe (:host github :repo "EducatedAlmost/bang.el"))
+
+;; Centred cursor mode
 (package! centered-cursor-mode)
+
+
+;; Nov.el
+(package! nov)
+
+;; Org-babel
+(package! restclient)
+(package! ob-restclient)
+
+;; Org-fragtog
+(package! org-fragtog)
+
+;; PlantUML
+(package! plantuml-mode :recipe (:host github :repo "skuro/plantuml-mode"))
+
+;; Read-time
+(package! read-time :recipe (:host github :repo "EducatedAlmost/read-time.el"))
+
+;; Vimrc
 (package! vimrc-mode)
