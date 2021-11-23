@@ -72,6 +72,9 @@
 ;; Input mode
 (add-hook 'text-mode-hook (lambda () (set-input-method 'TeX)))
 
+;; Java
+(setq meghanada-auto-start nil)
+
 ;; LSP
 (setq lsp-ui-doc-enable nil)
 
