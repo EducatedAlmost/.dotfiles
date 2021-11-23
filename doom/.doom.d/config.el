@@ -125,19 +125,6 @@
 ;; Org > Tags
 (setq org-tags-column 0)
 
-;; Org > Todo
-(setq org-todo-keywords
-      '((sequence
-         "TODO(t)" "REFILE(r)" "WAIT(w)"
-         "|"
-         "DONE(d)" "CANCELLED(c)")))
-(setq org-todo-keyword-faces
-      '(("TODO" . "SlateGray")
-        ("REFILE" . "DarkOrchid")
-        ("WAIT" . "Firebrick")
-        "|"
-        ("DONE" . "ForestGreen")
-        ("CANCELLED" . "SlateBlue")))
   ;; Archive subtree, preserving structure
   ;; https://github.com/daviderestivo/galactic-emacs/blob/master/lisp/org-archive-subtree.el
   (require 'dash)
@@ -180,6 +167,20 @@
                 (widen)
                 (org-end-of-subtree t t)
                 (org-paste-subtree level tree-text))))))))
+  ;; Org > Todo
+  (setq org-todo-keywords
+        '((sequence
+           "TODO(t)" "MOVE(m)" "WAIT(w)"
+           "|"
+           "DONE(d)" "KILL(k)")))
+
+  (setq org-todo-keyword-faces
+        '(("TODO" . "SlateGray")
+          ("MOVE" . "DarkOrchid")
+          ("WAIT" . "Firebrick")
+          "|"
+          ("DONE" . "ForestGreen")
+          ("KILL" . "SlateBlue")))
 ;; PlantUML
 (require 'plantuml-mode)
 (setq org-plantuml-jar-path "/home/dare/bin/plantuml-1.2021.13.jar")
