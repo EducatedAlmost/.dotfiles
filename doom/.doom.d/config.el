@@ -72,6 +72,9 @@
 ;; Input mode
 (add-hook 'text-mode-hook (lambda () (set-input-method 'TeX)))
 
+;; LSP
+(setq lsp-ui-doc-enable nil)
+
 ;; Mixed-pitch
 (add-hook 'org-mode-hook 'mixed-pitch-mode)
 
