@@ -3,6 +3,16 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
+(setq settings
+      '(("phobos" . ((mono-font-size . 20)
+                     (var-font-size . 28)))
+        ("europa" . ((mono-font-size . 18)
+                     (var-font-size . 24)))))
+
+(defun fetch-setting (setting)
+  (cdr (assoc setting
+              (cdr (assoc system-name settings)))))
+
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
 (setq user-full-name "AlmostEducated"
@@ -18,8 +28,14 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "Fira code" :size 20 :weight 'light)
-      doom-variable-pitch-font (font-spec :family "CMU Serif" :size 28 :weight 'light))
+(setq doom-font
+      (font-spec :family "Fira code"
+                 :size (fetch-setting 'mono-font-size)
+                 :weight 'light)
+      doom-variable-pitch-font
+      (font-spec :family "CMU Serif"
+                 :size (fetch-setting 'var-font-size)
+                 :weight 'light))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
