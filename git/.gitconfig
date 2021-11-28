@@ -4,9 +4,13 @@
 [core]
 	autocrlf = input
 	editor = emacs
+[pull]
+	rebase = false
 [push]
 	default = simple
 [alias]
 	lol = log --oneline --graph --decorate --all
 [credential]
 	helper = cache --timeout=302400
+[url "https://github.com/"]
+    insteadOf = gh:
