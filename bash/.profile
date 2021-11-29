@@ -16,13 +16,13 @@ export GOPATH=$HOME/src/go
 # i3
 
 HN=$(hostname)
-DOT=$HOME/.dotfiles.ae
-CUSTOM=$DOT/i3/.i3/config.$HN
-DEFAULT=$DOT/i3/.i3/config.default
+I3_CONFIG_DIR=$HOME/.config/i3
+CUSTOM=$I3_CONFIG_DIR/config.$HN
+DEFAULT=$I3_CONFIG_DIR/config.default
 if [[ -f "$CUSTOM" ]]; then
-	cat $CUSTOM > $DOT/i3/.i3/config
+    cat $CUSTOM > $DOT/i3/.i3/config
 else
-	cat $DEFAULT > $DOT/i3/.i3/config
+    cat $DEFAULT > $DOT/i3/.i3/config
 fi
 
 # Path
