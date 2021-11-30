@@ -3,12 +3,12 @@
 # http://i3wm.org/docs/userguide.html
 
 set $mod Mod4
-font pango:Fira Code 14
+font pango:Fira Code 10
 floating_modifier $mod
 
 new_window pixel
 
-gaps inner 20
+gaps inner 10
 gaps outer 0
 
 bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
@@ -161,7 +161,7 @@ bar {
     position top
     tray_output eDP
 
-    status_command i3status -c ~/.config/i3/i3status.conf
+    status_command i3status -c ~/.i3/i3status.conf
 
     colors {
         separator  $base008
@@ -176,8 +176,6 @@ bar {
 }
 
 # Startup
-
-exec --no-startup-id xset s 300 # Darken screen after 5 minutes of non-use
 
 # exec --no-startup-id nitrogen --set-zoom-fill --random ~/media/pictures/wallpapers/
 exec --no-startup-id nitrogen --set-auto ~/.wallpapers/faye.jpg

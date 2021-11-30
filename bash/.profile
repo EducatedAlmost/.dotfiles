@@ -20,9 +20,9 @@ I3_CONFIG_DIR=$HOME/.config/i3
 CUSTOM=$I3_CONFIG_DIR/config.$HN
 DEFAULT=$I3_CONFIG_DIR/config.default
 if [[ -f "$CUSTOM" ]]; then
-    cat $CUSTOM > $DOT/i3/.i3/config
+    cat $CUSTOM > $I3_CONFIG_DIR/config
 else
-    cat $DEFAULT > $DOT/i3/.i3/config
+    cat $DEFAULT > $I3_CONFIG_DIR/config
 fi
 
 # Path
