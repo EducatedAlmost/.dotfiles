@@ -1,0 +1,3 @@
+[submodule "clojure"]
+	path = clojure/.config/clojure
+	url = https://github.com/educatedalmost/clojure-deps-edn

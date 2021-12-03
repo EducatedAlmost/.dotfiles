@@ -125,14 +125,14 @@ focus_follows_mouse no
 
 # Colours
 
-set $yellow   #b58900
-set $orange   #cb4b16
-set $red      #dc322f
-set $magenta  #d33682
-set $violet   #6c71c4
-set $blue     #268bd2
-set $cyan     #2aa198
-set $green    #859900
+set $yellow  #b58900
+set $orange  #cb4b16
+set $red     #dc322f
+set $magenta #d33682
+set $violet  #6c71c4
+set $blue    #268bd2
+set $cyan    #2aa198
+set $green   #859900
 
 set $base000 #000011
 set $base001 #191928

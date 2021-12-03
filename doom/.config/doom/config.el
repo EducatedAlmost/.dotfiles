@@ -6,8 +6,12 @@
 (setq settings
       '(("phobos" . ((mono-font-size . 20)
                      (var-font-size . 28)))
+        ("luna" . ((mono-font-size . 20)
+                     (var-font-size . 28)))
         ("europa" . ((mono-font-size . 18)
-                     (var-font-size . 24)))))
+                     (var-font-size . 24)))
+        ("ceres" . ((mono-font-size . 10)
+                     (var-font-size . 16)))))
 
 (defun fetch-setting (setting)
   (cdr (assoc setting
@@ -118,9 +122,9 @@
   (setq org-startup-indented t)
 
   ;; Org > Agenda
-  (setq org-agenda-files `(,org-directory))
   (setq org-agenda-files
         (append (list org-directory)
+                `("~/org/private" "~/org/blog" "~/org/missing")
                 (directory-files org-directory 'full (rx "client-"))))
   (setq org-agenda-start-day "-1d")
   (setq org-agenda-span 7)
@@ -135,7 +139,7 @@
            nil)))
 
   ;; Org > Archiving
-  (setq org-archive-location (concat "~/org/archive" "/%s_archive::"))
+  (setq org-archive-location ".archive/%s_archive::")
 
   ;; Archive subtree, preserving structure
   ;; https://github.com/daviderestivo/galactic-emacs/blob/master/lisp/org-archive-subtree.el
@@ -192,6 +196,9 @@
   (setq org-capture-templates
         `(("c" "Capture" entry
            (file ,org-default-notes-file)
+           "* MOVE %?")
+          ("p" "Private" entry
+           (file "~/org/private/refile.org")
            "* MOVE %?")))
   ;; (add-hook 'org-capture-mode-hook 'evil-insert-state)
 
