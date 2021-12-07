@@ -6,7 +6,7 @@
 
 set $mod Mod4
 
-font pango:FiraCode 7
+font pango:FiraCode 12
 
 set $left h
 set $down j
