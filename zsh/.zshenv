@@ -32,7 +32,8 @@ export MOZ_ENABLE_WAYLAND=1 firefox
 
 export ZDOTDIR=/home/ae/.config/zsh
 # Define Zim location
-: ${ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim}
+# : ${ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim}
+export ZIM_HOME=$ZDOTDIR
 # }}} End configuration added by Zim install
 
 # Set path
