@@ -55,6 +55,8 @@ input "type:keyboard" {
 #       middle_emulation enabled
 #   }
 
+seat seat0 xcursor_theme default 20
+
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec $menu

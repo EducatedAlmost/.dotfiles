@@ -11,7 +11,6 @@ export PATH=$PATH:$GOPATH/bin
 export GDK_SCALE=2 # must be an integer
 export GDK_DPI_SCALE=1
 export XCURSOR_SIZE=20
-gsettings set org.gnome.desktop.interface cursor-size 20
 
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
@@ -34,7 +33,6 @@ export ZDOTDIR=/home/ae/.config/zsh
 # Define Zim location
 # : ${ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim}
 export ZIM_HOME=$ZDOTDIR
-# }}} End configuration added by Zim install
 
 # Set path
 # PATH_ELEMENTS=(
