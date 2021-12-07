@@ -13,11 +13,6 @@ if [[ -a $ALIASES ]]; then
     source $ALIASES
 fi
 
-# Emacs
-export EDITOR="emacsclient -c"
-export VISUAL="emacsclient -c"
-export ALTERNATE_EDITOR=emacs
-
 #
 # History
 #

@@ -20,6 +20,10 @@ export XDG_STATE_HOME=$HOME/.local/state
 
 export ZDOTDIR=$HOME/.config/zsh
 
+export EDITOR="emacsclient -c"
+export VISUAL="emacsclient -c"
+export ALTERNATE_EDITOR=emacs
+
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/.npmrc
 export GITLIBS=$XDG_CACHE_HOME/gitlibs
