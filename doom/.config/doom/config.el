@@ -95,6 +95,11 @@
 ;; Java
 (setq meghanada-auto-start nil)
 
+;; Lispyville
+(map! :map clojure-mode-map
+      "C-h" #'lispyville-backward-sexp
+      "C-l" #'lispyville-forward-sexp)
+
 ;; LSP
 (setq lsp-ui-doc-enable nil)
 
