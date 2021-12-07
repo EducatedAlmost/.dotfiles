@@ -55,7 +55,6 @@
 ;; Centred cursor mode
 (package! centered-cursor-mode)
 
-
 ;; Nov.el
 (package! nov)
 
