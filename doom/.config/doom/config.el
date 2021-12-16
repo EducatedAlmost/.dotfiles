@@ -11,7 +11,7 @@
         ("europa" . ((mono-font-size . 18)
                      (var-font-size . 24)))
         ("ceres" . ((mono-font-size . 10)
-                     (var-font-size . 16)))))
+                     (var-font-size . 12)))))
 
 (defun fetch-setting (setting)
   (cdr (assoc setting
@@ -88,6 +88,11 @@
 ;; Dired
 (setq dired-listing-switches "-aBGh --group-directories-first")
 (setq ranger-show-hidden t)
+
+;; Elfeed
+(setq rmh-elfeed-org-files '("~/org/rss/elfeed.org"))
+(setq elfeed-db-directory "~/org/rss/db/")
+(add-hook! 'elfeed-search-mode-hook 'elfeed-update)
 
 ;; Input mode
 (add-hook 'text-mode-hook (lambda () (set-input-method 'TeX)))
