@@ -1,0 +1,5 @@
+#+TITLE: Warning
+
+These files should not be deployed via Stow, they are merely suggestions about changes to make to existing files.
+
+Deploying these via Stow will break your system.
