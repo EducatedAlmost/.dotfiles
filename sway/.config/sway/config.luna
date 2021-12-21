@@ -18,7 +18,7 @@ set $term alacritty
 set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
 gaps inner 20
-gaps outer 10
+gaps outer 0
 
 focus_follows_mouse no
 
@@ -55,6 +55,7 @@ input "type:keyboard" {
 #       middle_emulation enabled
 #   }
 
+seat seat0 hide_cursor 3000
 seat seat0 xcursor_theme default 40
 
 bindsym $mod+Return exec $term
@@ -66,7 +67,9 @@ floating_modifier $mod normal
 bindsym $mod+Shift+c reload
 
 # Exit sway (logs you out of your Wayland session)
-bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+Shift+e exec swaynag -t warning \
+    -m 'Exit sway? This will end your Wayland session.' \
+    -b 'Yes, exit sway' 'swaymsg exit'
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume          exec pamixer -i 10
