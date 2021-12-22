@@ -212,9 +212,9 @@
            "* MOVE %?")))
   ;; (add-hook 'org-capture-mode-hook 'evil-insert-state)
 
-  ;; Org > Cycle
-  (setq org-tab-first-hook
-        (delete '+org-cycle-only-current-subtree-h org-tab-first-hook))
+  ;; ;; Org > Cycle
+  ;; (setq org-tab-first-hook
+  ;;       (delete '+org-cycle-only-current-subtree-h org-tab-first-hook))
 
   ;; Org > Fragtog
   (add-hook 'org-mode-hook 'org-fragtog-mode)
@@ -254,6 +254,10 @@
           ("DONE" . "ForestGreen")
           ("KILL" . "SlateBlue")))
   )
+
+;; Org > Cycle
+(after! evil-org
+  (remove-hook 'org-tab-first-hook #'+org-cycle-only-current-subtree-h))
 
 ;; PlantUML
 (require 'plantuml-mode)
