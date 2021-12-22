@@ -224,6 +224,18 @@
         '((heading . always)
           (plain-list-item . nil)))
 
+  ;; Org > Roam > Capture
+  (setq org-roam-capture-templates
+        '(("r" "Roam" plain "%?"
+          :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
+                             "#+title: ${title}\n")
+          :unnarrowed t)))
+  (setq org-roam-capture-ref-templates
+        '(("r" "Roam" plain "%?"
+          :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
+                             "#+title: ${title}\n")
+          :unnarrowed t)))
+
   ;; Org > Tags
   (setq org-tags-column 0)
 
