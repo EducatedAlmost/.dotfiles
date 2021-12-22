@@ -36,10 +36,10 @@ for_window [class=".*"] inhibit_idle fullscreen
 for_window [app_id=".*"] inhibit_idle fullscreen
 
 exec swayidle -w \
-    timeout 30 'if pgrep -x swaylock; then swaymsg "output * dpms off"; fi' \
+    timeout 299 'swaymsg "output * dpms off"' \
     timeout 300 'swaylock -i .wallpapers/faye.jpg -s center -c "000000"' \
-    timeout 301 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"'
+    # timeout 30 'if pgrep -x swaylock; then swaymsg "output * dpms off"; fi' \
     # timeout 1800 'swaylock' \
 
 # You can get the names of your inputs by running: swaymsg -t get_inputs
@@ -271,7 +271,6 @@ include ~/.config/sway/config.$hostname
 exec wl-paste -t text --watch clipman store --no-persist
 
 exec /usr/bin/python /home/ae/.config/sway/contrib/inactive-windows-transparency.py
-exec unclutter
 exec batsignal -b
 
 set $nag exec swaynagmode
