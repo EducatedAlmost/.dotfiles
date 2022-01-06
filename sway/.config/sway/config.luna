@@ -37,8 +37,8 @@ for_window [app_id=".*"] inhibit_idle fullscreen
 
 exec swayidle -w \
     timeout 299 'swaymsg "output * dpms off"' \
-    timeout 300 'swaylock -i .wallpapers/faye.jpg -s center -c "000000"' \
     resume 'swaymsg "output * dpms on"'
+    # timeout 300 'swaylock -i .wallpapers/faye.jpg -s center -c "000000"' \
     # timeout 30 'if pgrep -x swaylock; then swaymsg "output * dpms off"; fi' \
     # timeout 1800 'swaylock' \
 
