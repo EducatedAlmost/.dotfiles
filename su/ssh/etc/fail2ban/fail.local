@@ -1,0 +1,6 @@
+# fail2ban local configuration
+# /etc/fail2ban/jail.conf may be overwritten on upgrade
+
+[sshd]
+enabled = true
+banaction = ufw
