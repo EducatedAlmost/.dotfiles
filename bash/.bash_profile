@@ -32,6 +32,10 @@ export GITLIBS=$XDG_CACHE_HOME/gitlibs
 
 export MOZ_ENABLE_WAYLAND=1 firefox
 
+export WINEHOME=$XDG_DATA_HOME/wine
+export WINEARCH=win32
+export WINEPREFIX=$XDG_DATA_HOME/wine/.wine-32
+
 # Config generation
 
 ## SwayWM
