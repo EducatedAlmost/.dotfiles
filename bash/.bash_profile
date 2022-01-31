@@ -4,6 +4,8 @@
 
 echo "Running ~/.bash_profile"
 
+export HOSTNAME=$HOST
+
 # export PATH=$PATH:/path/file
 export PATH=$PATH:$HOME/.scripts
 export PATH=$PATH:$HOME/.config/emacs/bin
@@ -30,14 +32,26 @@ export GITLIBS=$XDG_CACHE_HOME/gitlibs
 
 export MOZ_ENABLE_WAYLAND=1 firefox
 
-[[ -f ~/.bashrc ]] && . ~/.bashrc
+export WINEHOME=$XDG_DATA_HOME/wine
+export WINEARCH=win32
+export WINEPREFIX=$XDG_DATA_HOME/wine/.wine-32
 
-# HN=$(hostname)
-# I3_CONFIG_DIR=$HOME/.config/i3
-# CUSTOM=$I3_CONFIG_DIR/config.$HN
-# DEFAULT=$I3_CONFIG_DIR/config.default
-# if [[ -f "$CUSTOM" ]]; then
-#     cat $CUSTOM > $I3_CONFIG_DIR/config
-# else
-#     cat $DEFAULT > $I3_CONFIG_DIR/config
-# fi
+# Config generation
+
+## SwayWM
+isogeny \
+    -t ~/.dotfiles/sway/.config/sway/config.template \
+    -c ~/.dotfiles/sway/.config/sway/config.$(uname -n).edn \
+    -d ~/.dotfiles/sway/.config/sway/config.default.edn \
+    -o ~/.dotfiles/sway/.config/sway/config \
+    --strict --verbose
+
+## Alacritty
+isogeny \
+    -t ~/.dotfiles/alacritty/.config/alacritty/alacritty.yml.template \
+    -c ~/.dotfiles/alacritty/.config/alacritty/alacritty.yml.$(uname -n).edn \
+    -d ~/.dotfiles/alacritty/.config/alacritty/alacritty.yml.default.edn \
+    -o ~/.dotfiles/alacritty/.config/alacritty/alacritty.yml \
+    --strict --verbose
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc

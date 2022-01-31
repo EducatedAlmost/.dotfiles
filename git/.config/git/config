@@ -11,6 +11,6 @@
 [alias]
 	lol = log --oneline --graph --decorate --all
 [credential]
-	helper = cache --timeout=302400
+	helper = cache --timeout=86400
 [url "https://github.com/"]
     insteadOf = gh:

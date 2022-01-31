@@ -1,0 +1,3 @@
+Port <port>
+PasswordAuthentication no
+AuthenticationMethods publickey

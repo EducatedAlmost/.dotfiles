@@ -35,11 +35,13 @@
 (setq doom-font
       (font-spec :family "Fira code"
                  :size (fetch-setting 'mono-font-size)
-                 :weight 'light)
+                 ;; :weight 'semi-light
+                 )
       doom-variable-pitch-font
       (font-spec :family "CMU Serif"
                  :size (fetch-setting 'var-font-size)
-                 :weight 'light))
+                 ;; :weight 'semi-light
+                 ))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -48,7 +50,7 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type t)
+(setq display-line-numbers-type 'relative)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
@@ -72,7 +74,8 @@
 ;; (setq backup-by-copying nil)
 
 ;; Bang.el
-(require 'bang)
+(after! org
+  (require 'bang))
 
 ;; Browser
 (setq browse-url-browser-function 'browse-url-firefox
@@ -93,6 +96,7 @@
 (setq rmh-elfeed-org-files '("~/org/rss/elfeed.org"))
 (setq elfeed-db-directory "~/org/rss/db/")
 (add-hook! 'elfeed-search-mode-hook 'elfeed-update)
+(setq elfeed-goodies/feed-source-column-width 24)
 
 ;; Input mode
 (add-hook 'text-mode-hook (lambda () (set-input-method 'TeX)))
@@ -112,16 +116,17 @@
 (add-hook 'org-mode-hook 'mixed-pitch-mode)
 (add-hook 'org-mode-hook 'variable-pitch-mode)
 
-;; Nov.el
-(require 'nov)
-(add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
-(defun my-nov-font-setup ()
-  (face-remap-add-relative
-   'variable-pitch
-   :family "CMU Serif"
-   :height 1.2))
-(add-hook 'nov-mode-hook 'my-nov-font-setup)
-;; (add-hook 'nov-mode-hook 'visual-line-mode)
+;; ;; Nov.el
+(after! org
+  (require 'nov)
+  (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
+  (defun my-nov-font-setup ()
+    (face-remap-add-relative
+     'variable-pitch
+     :family "CMU Serif"
+     :height 1.2))
+  (add-hook 'nov-mode-hook 'my-nov-font-setup)
+  (add-hook 'nov-mode-hook 'visual-line-mode))
 
 ;; Org
 (after! org
@@ -201,6 +206,10 @@
      (dot . t)
      (ditaa . t)
      (plantuml . t)))
+
+  ;; Org > Bullets
+  ;; ⟶ → ⇉ ⇶ ⇾ ⇢ ↠ ↦ ⟼ ⟾ ↣ ⟹ ⇒ ⇛ ⇨ ⇴ ⇻ '("⁖" "◉" "○" "✸" "✿")
+  (setq org-superstar-headline-bullets-list '("→"))
 
   ;; Org > Capture
   (setq org-capture-templates

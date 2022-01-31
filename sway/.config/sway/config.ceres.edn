@@ -1,0 +1,4 @@
+{:font {:family "FiraCode" :size 7}
+ :gaps {:inner 10 :outer 0}
+ :kbs [{:identifier "type:keyboard" :layout "us"} {:identifier "1241:321:USB_Keyboard" :layout "gb"}]
+ :cursor {:size 20}}
