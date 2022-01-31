@@ -74,7 +74,8 @@
 ;; (setq backup-by-copying nil)
 
 ;; Bang.el
-(require 'bang)
+(after! org
+  (require 'bang))
 
 ;; Browser
 (setq browse-url-browser-function 'browse-url-firefox
@@ -114,16 +115,17 @@
 (add-hook 'org-mode-hook 'mixed-pitch-mode)
 (add-hook 'org-mode-hook 'variable-pitch-mode)
 
-;; Nov.el
-(require 'nov)
-(add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
-(defun my-nov-font-setup ()
-  (face-remap-add-relative
-   'variable-pitch
-   :family "CMU Serif"
-   :height 1.2))
-(add-hook 'nov-mode-hook 'my-nov-font-setup)
-;; (add-hook 'nov-mode-hook 'visual-line-mode)
+;; ;; Nov.el
+(after! org
+  (require 'nov)
+  (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
+  (defun my-nov-font-setup ()
+    (face-remap-add-relative
+     'variable-pitch
+     :family "CMU Serif"
+     :height 1.2))
+  (add-hook 'nov-mode-hook 'my-nov-font-setup)
+  (add-hook 'nov-mode-hook 'visual-line-mode))
 
 ;; Org
 (after! org
