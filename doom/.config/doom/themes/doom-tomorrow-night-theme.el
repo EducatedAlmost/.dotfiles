@@ -16,7 +16,7 @@ determine the exact padding."
 
   ;; name        gui       256       16
   ((bg         '("#161719" nil       nil          ))
-   (bg-alt     '("#161719" nil       nil          ))
+   (bg-alt     (doom-lighten bg 0.05))
    (base0      '("#0d0d0d" "black"   "black"      ))
    (base1      '("#1b1b1b" "#1b1b1b"              ))
    (base2      '("#212122" "#1e1e1e"              ))

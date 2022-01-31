@@ -50,7 +50,7 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type t)
+(setq display-line-numbers-type 'relative)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
@@ -96,6 +96,7 @@
 (setq rmh-elfeed-org-files '("~/org/rss/elfeed.org"))
 (setq elfeed-db-directory "~/org/rss/db/")
 (add-hook! 'elfeed-search-mode-hook 'elfeed-update)
+(setq elfeed-goodies/feed-source-column-width 24)
 
 ;; Input mode
 (add-hook 'text-mode-hook (lambda () (set-input-method 'TeX)))
@@ -205,6 +206,10 @@
      (dot . t)
      (ditaa . t)
      (plantuml . t)))
+
+  ;; Org > Bullets
+  ;; ⟶ → ⇉ ⇶ ⇾ ⇢ ↠ ↦ ⟼ ⟾ ↣ ⟹ ⇒ ⇛ ⇨ ⇴ ⇻ '("⁖" "◉" "○" "✸" "✿")
+  (setq org-superstar-headline-bullets-list '("→"))
 
   ;; Org > Capture
   (setq org-capture-templates
