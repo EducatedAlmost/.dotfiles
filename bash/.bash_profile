@@ -12,7 +12,7 @@ export GOPATH=$HOME/src/go
 export PATH=$PATH:$GOPATH/bin
 
 # export a=$([ "$hostname" == "luna" ] && echo 2 || echo 1)
-export GDK_SCALE=2 # must be an integer
+export GDK_SCALE=1 # must be an integer
 export GDK_DPI_SCALE=1
 export XCURSOR_SIZE=20
 gsettings set org.gnome.desktop.interface cursor-size 20
