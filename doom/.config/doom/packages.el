@@ -71,5 +71,8 @@
 ;; Read-time
 (package! read-time :recipe (:host github :repo "EducatedAlmost/read-time.el"))
 
+;; Solaire
+(package! solaire-mode :disable t)
+
 ;; Vimrc
 (package! vimrc-mode)
