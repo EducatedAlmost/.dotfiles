@@ -228,22 +228,28 @@
   ;; Org > Fragtog
   (add-hook 'org-mode-hook 'org-fragtog-mode)
 
+  ;; Org > Goto
+  (setq org-goto-interface 'outline-path-completion)
+
   ;; Org > Headings
   (setq org-blank-before-new-entry
-        '((heading . always)
+        '((heading . nil)
           (plain-list-item . nil)))
+
+  ;; Org > Log
+  (setq org-log-into-drawer t)
 
   ;; Org > Roam > Capture
   (setq org-roam-capture-templates
         '(("r" "Roam" plain "%?"
-          :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
-                             "#+title: ${title}\n")
-          :unnarrowed t)))
+           :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
+                              "#+title: ${title}\n")
+           :unnarrowed t)))
   (setq org-roam-capture-ref-templates
         '(("r" "Roam" plain "%?"
-          :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
-                             "#+title: ${title}\n")
-          :unnarrowed t)))
+           :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
+                              "#+title: ${title}\n")
+           :unnarrowed t)))
 
   ;; Org > Tags
   (setq org-tags-column 0)
@@ -269,11 +275,12 @@
   (remove-hook 'org-tab-first-hook #'+org-cycle-only-current-subtree-h))
 
 ;; PlantUML
-(require 'plantuml-mode)
-(setq org-plantuml-jar-path "/home/dare/bin/plantuml-1.2021.13.jar")
-(setq org-plantuml-executable-path "plantuml")
-(setq org-plantuml-exec-mode 'executable)
-(add-to-list 'org-src-lang-modes '("plantuml" . plantuml))
+(after! org
+  (require 'plantuml-mode)
+  (setq org-plantuml-jar-path "/home/dare/bin/plantuml-1.2021.13.jar")
+  (setq org-plantuml-executable-path "plantuml")
+  (setq org-plantuml-exec-mode 'executable)
+  (add-to-list 'org-src-lang-modes '("plantuml" . plantuml)))
 
 ;; Projectile
 (setq projectile-project-search-path '("~/src/" "~/git/" "~/org/"))
@@ -290,7 +297,7 @@
 
 ;; Vimrc
 (require 'vimrc-mode)
-(add-to-list 'auto-mode-alist '("\\.vim\\(rc\\)?\\'" . vimrc-mode))
+(add-to-list 'auto-mode-alist '("\\.vim\\(rc\\)?\\'" . vimrc-mode)
 
 ;; Visual-line-mode
 ;; Make movement keys work like they should
@@ -299,3 +306,6 @@
 ;;       "k" #'evil-previous-visual-line)
 ;; Make horizontal movement cross lines
 ;; (setq-default evil-cross-lines t)
+
+;; Word wrap
+(+global-word-wrap-mode +1))
