@@ -274,6 +274,7 @@ exec wl-paste -t text --watch clipman store --no-persist
 
 exec /usr/bin/python /home/ae/.config/sway/contrib/inactive-windows-transparency.py
 exec batsignal -b
+exec gammastep
 
 set $nag exec swaynagmode
 mode "nag" {
