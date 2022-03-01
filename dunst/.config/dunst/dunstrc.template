@@ -1,5 +1,5 @@
 [global]
-    font = "Fira mono 14"
+    font = "Fira mono {{font-size}}"
     allow_markup = yes
     format = "<b>%s</b>\n%b"
     sort = yes
