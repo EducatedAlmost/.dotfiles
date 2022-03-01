@@ -19,8 +19,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "AlmostEducated"
-      user-mail-address "EducatedAlmost@gmail.com")
+(setq user-full-name "Aelfsyg"
+      user-mail-address "aelfsyg@gmail.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -74,6 +74,7 @@
 ;; (setq backup-by-copying nil)
 
 ;; Bang.el
+(setq bang-roam-support t)
 (after! org
   (require 'bang))
 

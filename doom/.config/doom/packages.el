@@ -50,7 +50,7 @@
 ;(unpin! t)
 
 ;; Bang.el
-(package! bang :recipe (:host github :repo "EducatedAlmost/bang.el"))
+(package! bang :recipe (:host github :repo "aelfsyg/bang.el"))
 
 ;; Centred cursor mode
 (package! centered-cursor-mode)
@@ -69,7 +69,7 @@
 (package! plantuml-mode :recipe (:host github :repo "skuro/plantuml-mode"))
 
 ;; Read-time
-(package! read-time :recipe (:host github :repo "EducatedAlmost/read-time.el"))
+(package! read-time :recipe (:host github :repo "aelfsyg/read-time.el"))
 
 ;; Solaire
 (package! solaire-mode :disable t)
